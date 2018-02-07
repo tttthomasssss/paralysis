@@ -1,0 +1,632 @@
+[
+    {
+        "C": 0.1,
+        "ngram_max": 1,
+        "composition_method": "vector_concatenation",
+        "result": 0.661552529973583,
+        "binarise": false
+    },
+    {
+        "C": 0.1,
+        "ngram_max": 2,
+        "composition_method": "vector_concatenation",
+        "result": 0.684921763869132,
+        "binarise": false
+    },
+    {
+        "C": 0.1,
+        "ngram_max": 3,
+        "composition_method": "vector_concatenation",
+        "result": 0.680451127819549,
+        "binarise": false
+    },
+    {
+        "C": 1.0,
+        "ngram_max": 1,
+        "composition_method": "vector_concatenation",
+        "result": 0.668055273318431,
+        "binarise": false
+    },
+    {
+        "C": 1.0,
+        "ngram_max": 2,
+        "composition_method": "vector_concatenation",
+        "result": 0.673338752286121,
+        "binarise": false
+    },
+    {
+        "C": 1.0,
+        "ngram_max": 3,
+        "composition_method": "vector_concatenation",
+        "result": 0.677199756147125,
+        "binarise": false
+    },
+    {
+        "C": 10.0,
+        "ngram_max": 1,
+        "composition_method": "vector_concatenation",
+        "result": 0.668055273318431,
+        "binarise": false
+    },
+    {
+        "C": 10.0,
+        "ngram_max": 2,
+        "composition_method": "vector_concatenation",
+        "result": 0.633611054663686,
+        "binarise": false
+    },
+    {
+        "C": 10.0,
+        "ngram_max": 3,
+        "composition_method": "vector_concatenation",
+        "result": 0.650071123755334,
+        "binarise": false
+    },
+    {
+        "C": 0.1,
+        "ngram_max": 1,
+        "composition_method": "vector_addition",
+        "result": 0.586161349319244,
+        "binarise": false
+    },
+    {
+        "C": 0.1,
+        "ngram_max": 2,
+        "composition_method": "vector_addition",
+        "result": 0.623348912822597,
+        "binarise": false
+    },
+    {
+        "C": 0.1,
+        "ngram_max": 3,
+        "composition_method": "vector_addition",
+        "result": 0.623145702093071,
+        "binarise": false
+    },
+    {
+        "C": 1.0,
+        "ngram_max": 1,
+        "composition_method": "vector_addition",
+        "result": 0.582198740093477,
+        "binarise": false
+    },
+    {
+        "C": 1.0,
+        "ngram_max": 2,
+        "composition_method": "vector_addition",
+        "result": 0.608006502743345,
+        "binarise": false
+    },
+    {
+        "C": 1.0,
+        "ngram_max": 3,
+        "composition_method": "vector_addition",
+        "result": 0.609835399309083,
+        "binarise": false
+    },
+    {
+        "C": 10.0,
+        "ngram_max": 1,
+        "composition_method": "vector_addition",
+        "result": 0.578134525502947,
+        "binarise": false
+    },
+    {
+        "C": 10.0,
+        "ngram_max": 2,
+        "composition_method": "vector_addition",
+        "result": 0.571834992887625,
+        "binarise": false
+    },
+    {
+        "C": 10.0,
+        "ngram_max": 3,
+        "composition_method": "vector_addition",
+        "result": 0.584027636659216,
+        "binarise": false
+    },
+    {
+        "C": 0.1,
+        "ngram_max": 1,
+        "composition_method": "vector_difference",
+        "result": 0.709510262141841,
+        "binarise": false
+    },
+    {
+        "C": 0.1,
+        "ngram_max": 2,
+        "composition_method": "vector_difference",
+        "result": 0.717841902052428,
+        "binarise": false
+    },
+    {
+        "C": 0.1,
+        "ngram_max": 3,
+        "composition_method": "vector_difference",
+        "result": 0.714793741109531,
+        "binarise": false
+    },
+    {
+        "C": 1.0,
+        "ngram_max": 1,
+        "composition_method": "vector_difference",
+        "result": 0.719365982523877,
+        "binarise": false
+    },
+    {
+        "C": 1.0,
+        "ngram_max": 2,
+        "composition_method": "vector_difference",
+        "result": 0.727697622434465,
+        "binarise": false
+    },
+    {
+        "C": 1.0,
+        "ngram_max": 3,
+        "composition_method": "vector_difference",
+        "result": 0.7206868522658,
+        "binarise": false
+    },
+    {
+        "C": 10.0,
+        "ngram_max": 1,
+        "composition_method": "vector_difference",
+        "result": 0.719162771794351,
+        "binarise": false
+    },
+    {
+        "C": 10.0,
+        "ngram_max": 2,
+        "composition_method": "vector_difference",
+        "result": 0.709611867506604,
+        "binarise": false
+    },
+    {
+        "C": 10.0,
+        "ngram_max": 3,
+        "composition_method": "vector_difference",
+        "result": 0.702804308067466,
+        "binarise": false
+    },
+    {
+        "C": 0.1,
+        "ngram_max": 1,
+        "composition_method": "vector_product",
+        "result": 0.479170900223532,
+        "binarise": false
+    },
+    {
+        "C": 0.1,
+        "ngram_max": 2,
+        "composition_method": "vector_product",
+        "result": 0.468908758382443,
+        "binarise": false
+    },
+    {
+        "C": 0.1,
+        "ngram_max": 3,
+        "composition_method": "vector_product",
+        "result": 0.455293639504166,
+        "binarise": false
+    },
+    {
+        "C": 1.0,
+        "ngram_max": 1,
+        "composition_method": "vector_product",
+        "result": 0.484759195285511,
+        "binarise": false
+    },
+    {
+        "C": 1.0,
+        "ngram_max": 2,
+        "composition_method": "vector_product",
+        "result": 0.488823409876041,
+        "binarise": false
+    },
+    {
+        "C": 1.0,
+        "ngram_max": 3,
+        "composition_method": "vector_product",
+        "result": 0.47693558219874,
+        "binarise": false
+    },
+    {
+        "C": 10.0,
+        "ngram_max": 1,
+        "composition_method": "vector_product",
+        "result": 0.48191424507214,
+        "binarise": false
+    },
+    {
+        "C": 10.0,
+        "ngram_max": 2,
+        "composition_method": "vector_product",
+        "result": 0.490550701077017,
+        "binarise": false
+    },
+    {
+        "C": 10.0,
+        "ngram_max": 3,
+        "composition_method": "vector_product",
+        "result": 0.489737858158911,
+        "binarise": false
+    },
+    {
+        "C": 0.1,
+        "ngram_max": 1,
+        "composition_method": "vector_asym",
+        "result": 0.720788457630563,
+        "binarise": false
+    },
+    {
+        "C": 0.1,
+        "ngram_max": 2,
+        "composition_method": "vector_asym",
+        "result": 0.723125381020118,
+        "binarise": false
+    },
+    {
+        "C": 0.1,
+        "ngram_max": 3,
+        "composition_method": "vector_asym",
+        "result": 0.717943507417192,
+        "binarise": false
+    },
+    {
+        "C": 1.0,
+        "ngram_max": 1,
+        "composition_method": "vector_asym",
+        "result": 0.726376752692542,
+        "binarise": false
+    },
+    {
+        "C": 1.0,
+        "ngram_max": 2,
+        "composition_method": "vector_asym",
+        "result": 0.732066653119285,
+        "binarise": false
+    },
+    {
+        "C": 1.0,
+        "ngram_max": 3,
+        "composition_method": "vector_asym",
+        "result": 0.721398089819142,
+        "binarise": false
+    },
+    {
+        "C": 10.0,
+        "ngram_max": 1,
+        "composition_method": "vector_asym",
+        "result": 0.726376752692542,
+        "binarise": false
+    },
+    {
+        "C": 10.0,
+        "ngram_max": 2,
+        "composition_method": "vector_asym",
+        "result": 0.715200162568584,
+        "binarise": false
+    },
+    {
+        "C": 10.0,
+        "ngram_max": 3,
+        "composition_method": "vector_asym",
+        "result": 0.702397886608413,
+        "binarise": false
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_concatenation",
+        "result": 0.662466978256452,
+        "ngram_max": 1,
+        "C": 0.1
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_concatenation",
+        "result": 0.686547449705344,
+        "ngram_max": 2,
+        "C": 0.1
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_concatenation",
+        "result": 0.681771997561471,
+        "ngram_max": 3,
+        "C": 0.1
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_concatenation",
+        "result": 0.666124771387929,
+        "ngram_max": 1,
+        "C": 1.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_concatenation",
+        "result": 0.671408250355619,
+        "ngram_max": 2,
+        "C": 1.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_concatenation",
+        "result": 0.677606177606178,
+        "ngram_max": 3,
+        "C": 1.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_concatenation",
+        "result": 0.667648851859378,
+        "ngram_max": 1,
+        "C": 10.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_concatenation",
+        "result": 0.633306238569396,
+        "ngram_max": 2,
+        "C": 10.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_concatenation",
+        "result": 0.649969518390571,
+        "ngram_max": 3,
+        "C": 10.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_addition",
+        "result": 0.584129242023979,
+        "ngram_max": 1,
+        "C": 0.1
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_addition",
+        "result": 0.61969111969112,
+        "ngram_max": 2,
+        "C": 0.1
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_addition",
+        "result": 0.62406015037594,
+        "ngram_max": 3,
+        "C": 0.1
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_addition",
+        "result": 0.581792318634424,
+        "ngram_max": 1,
+        "C": 1.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_addition",
+        "result": 0.607295265190002,
+        "ngram_max": 2,
+        "C": 1.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_addition",
+        "result": 0.61064824222719,
+        "ngram_max": 3,
+        "C": 1.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_addition",
+        "result": 0.579048973785816,
+        "ngram_max": 1,
+        "C": 10.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_addition",
+        "result": 0.571225360699045,
+        "ngram_max": 2,
+        "C": 10.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_addition",
+        "result": 0.58321479374111,
+        "ngram_max": 3,
+        "C": 10.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_difference",
+        "result": 0.709205446047551,
+        "ngram_max": 1,
+        "C": 0.1
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_difference",
+        "result": 0.719061166429588,
+        "ngram_max": 2,
+        "C": 0.1
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_difference",
+        "result": 0.714285714285714,
+        "ngram_max": 3,
+        "C": 0.1
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_difference",
+        "result": 0.718349928876245,
+        "ngram_max": 1,
+        "C": 1.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_difference",
+        "result": 0.727494411704938,
+        "ngram_max": 2,
+        "C": 1.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_difference",
+        "result": 0.719569193253404,
+        "ngram_max": 3,
+        "C": 1.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_difference",
+        "result": 0.717537085958139,
+        "ngram_max": 1,
+        "C": 10.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_difference",
+        "result": 0.710119894330421,
+        "ngram_max": 2,
+        "C": 10.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_difference",
+        "result": 0.700568990042674,
+        "ngram_max": 3,
+        "C": 10.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_product",
+        "result": 0.479983743141638,
+        "ngram_max": 1,
+        "C": 0.1
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_product",
+        "result": 0.470128022759602,
+        "ngram_max": 2,
+        "C": 0.1
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_product",
+        "result": 0.452956716114611,
+        "ngram_max": 3,
+        "C": 0.1
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_product",
+        "result": 0.488315383052225,
+        "ngram_max": 1,
+        "C": 1.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_product",
+        "result": 0.490550701077017,
+        "ngram_max": 2,
+        "C": 1.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_product",
+        "result": 0.479577321682585,
+        "ngram_max": 3,
+        "C": 1.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_product",
+        "result": 0.487299329404593,
+        "ngram_max": 1,
+        "C": 10.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_product",
+        "result": 0.491363543995123,
+        "ngram_max": 2,
+        "C": 10.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_product",
+        "result": 0.49095712253607,
+        "ngram_max": 3,
+        "C": 10.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_asym",
+        "result": 0.721296484454379,
+        "ngram_max": 1,
+        "C": 0.1
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_asym",
+        "result": 0.722617354196302,
+        "ngram_max": 2,
+        "C": 0.1
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_asym",
+        "result": 0.715809794757163,
+        "ngram_max": 3,
+        "C": 0.1
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_asym",
+        "result": 0.728307254623044,
+        "ngram_max": 1,
+        "C": 1.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_asym",
+        "result": 0.731761837024995,
+        "ngram_max": 2,
+        "C": 1.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_asym",
+        "result": 0.722820564925828,
+        "ngram_max": 3,
+        "C": 1.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_asym",
+        "result": 0.726478358057305,
+        "ngram_max": 1,
+        "C": 10.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_asym",
+        "result": 0.714895346474294,
+        "ngram_max": 2,
+        "C": 10.0
+    },
+    {
+        "binarise": true,
+        "composition_method": "vector_asym",
+        "result": 0.702702702702703,
+        "ngram_max": 3,
+        "C": 10.0
+    }
+]
