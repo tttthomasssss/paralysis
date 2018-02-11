@@ -17,6 +17,9 @@ def load_data(d, **kwargs):
 			'.json')):  # Expect a json file (list of dicts really), where each item corresponds to a single observation
 		with open(d) as in_file:
 			df = pd.DataFrame.from_dict(json.load(in_file))
+			#df['index'] = range(1, len(df) + 1) # REINDEXING FUCKS IT UP COMPLETELY...
+			#df = df.reset_index()
+			#print(df.columns)
 	elif (isinstance(d, str)):
 		data_reader = kwargs.pop('data_reader', np.loadtxt)
 		param_names = kwargs.pop('parameter_names')

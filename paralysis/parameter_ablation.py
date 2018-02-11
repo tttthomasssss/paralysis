@@ -51,34 +51,35 @@ class ParameterAnalyser():
 		# ANOVA ablation
 		# ANOVA type explanation: https://mcfromnz.wordpress.com/2011/03/02/anova-type-iiiiii-ss-explained/
 		anova_table = sm.stats.anova_lm(model, typ=anova_type, scale=anova_scale, test=anova_test, robust=anova_robust)
+		anova_table['partial_sum_sq'] = (anova_table['sum_sq'] / anova_table['sum_sq'].sum())
 		anova_table['pct_explained'] = (anova_table['sum_sq'] / anova_table['sum_sq'].sum()) * 100
 
 		self.model_ = model
 		self.anova_table_raw_ = anova_table
 
-		# TODO: Format the Anova table
-		'''
-		Copy table
+		# Copy table
 		self.anova_table_fmt_ = self.anova_table_raw_.copy(deep=True)
 		
 		# Drop residual
 		self.anova_table_fmt_.drop(self.anova_table_fmt_.tail(1).index, inplace=True)
 		
 		# Add name to parameter
-		self.anova_table_fmt_.rename(columns={'Unnamed: 0': 'parameter'}, inplace=True)
+		#self.anova_table_fmt_.rename(columns={'Unnamed: 0': 'parameter'}, inplace=True)
+		#if (self.anova_table_fmt_.index.names[0] is None):
+		#	self.anova_table_fmt_.index.names = ['parameter']
 		
 		# Sort by variance explained
 		self.anova_table_fmt_.sort_values(by='pct_explained', ascending=False, inplace=True)
-		'''
 
-		self.anova_result_ = collections.namedtuple('AnovaResult', ['explained_variance', 'mse'])(
-			explained_variance=model.rsquared_adj, mse=model.mse_total
+		self.anova_result_ = collections.namedtuple('AnovaResult', ['rsquared_adj', 'rsquared', 'mse'])(
+			rsquared_adj=model.rsquared_adj, rsquared=model.rsquared, mse=model.mse_total
 		)
 
-		# Oddly enough, rsquared differs from pct_explained (sum of squares), these blogposts could shed some light on it:
+		# TODO: Calculate pct_explained as a fraction of r2 and r2_adj, because r2 differs from the raw sum of squares (and therefore pct_explained)
 		# http://blog.minitab.com/blog/statistics-and-quality-data-analysis/r-squared-sometimes-a-square-is-just-a-square
 		# http://blog.minitab.com/blog/adventures-in-statistics-2/regression-analysis-how-do-i-interpret-r-squared-and-assess-the-goodness-of-fit
 		# https://stats.stackexchange.com/questions/32596/what-is-the-difference-between-coefficient-of-determination-and-mean-squared
+		# DONT FORGET THE RESIDUAL PLOT
 
 		return self.anova_result_
 
