@@ -5,7 +5,6 @@ from patsy import dmatrices
 from patsy import LookupFactor
 from patsy import ModelDesc
 from patsy import Term
-from sklearn.linear_model import LinearRegression
 from statsmodels import api as sm
 from statsmodels.formula import api as smf
 
@@ -50,56 +49,9 @@ class ParameterAnalyser():
 			for model_size, result_list in results.items():
 				c += sum(result_list) / len(result_list)
 			total_results[param] = max(c / len(results), 0)
-		'''
-			print('PARAM={}'.format(param))
-			for terms, formula in model_subsets[param]:
 
-				# Create statsmodels ols
-				model = smf.OLS(y_dm, X_dm).fit()
-
-				print('TERMS: {}; RSQ: {}'.format(terms, model.rsquared_adj))
-
-
-		for param_pair, paired_subsets in model_subsets.items():
-			print('PARAM_PAIR={}'.format(param_pair))
-			for (formula_1, terms_1), (formula_2, terms_2) in paired_subsets:
-				y_dm_1, X_dm_1 = dmatrices(formula_1, self.data_[list(terms_1)], return_type='matrix')
-				y_dm_2, X_dm_2 = dmatrices(formula_2, self.data_[list(terms_2)], return_type='matrix')
-
-				# Create statsmodels ols
-				model_1 = smf.OLS(y_dm_1, X_dm_1).fit()
-				model_2 = smf.OLS(y_dm_2, X_dm_2).fit()
-
-				if (model_1.rsquared_adj > model_2.rsquared_adj):
-					results[param_pair[0]] += 1
-				if (model_2.rsquared_adj > model_1.rsquared_adj):
-					results[param_pair[1]] += 1
-
-				print('MODEL 1[{}] rsq: {} vs. MODEL 2[{}] rsq: {}'.format(terms_1, model_1.rsquared_adj, terms_2, model_2.rsquared_adj))
-			print('-------------')
-			''
-			''
-			for formula, formula_terms in subsets:
-				print('PARAM_PAIR={}; formula_terms={}'.format(param_pair, formula_terms))
-				y_dm, X_dm = dmatrices(formula, self.data_[list(formula_terms)], return_type='matrix')
-
-				# Create statsmodels ols
-				model = smf.OLS(y_dm, X_dm).fit()
-
-				results[param_pair][tuple(formula_terms)] = model.rsquared_adj
-				print('FORMULA TERMS={}; RSQUARED_ADJ={}'.format(formula_terms, model.rsquared_adj))
-				print('----')
-			print('RESULTS: {}'.format(results)) # TODO: Create the ordering!!!
-			'''
-
-		'''
-		If the models is created via a `ModelDesc` formula instead of a string, the design matrix dataframe
-		for some reasons does not contain a design_info field. Hence, the quick and easy way out of this shit
-		is to simply set an appropriate design_info a priori to calling the anova_lm function in order
-		to avoid the whole shit to crash
-		'''
 		print(total_results)
-		model.model.data.design_info = X_dm.design_info
+		#model.model.data.design_info = X_dm.design_info
 
 	def _build_subsets(self):
 		data_columns = [c for c in self.data_.columns.values.tolist() if c != self.label_name_]
@@ -132,61 +84,7 @@ class ParameterAnalyser():
 					pair_2 = (rhs_terms_2 + [self.label_name_], formula_2)
 					subsets[col][k].append((pair_1, pair_2))
 		return subsets
-		'''
-		data_columns = self.data_.columns.values.tolist()
-
-		all_pairs = [p for p in itertools.combinations(data_columns, 2) if self.label_name_ not in p]
-
-		all_subsets = []
-		for i in range(1, len(data_columns) + 1):
-			all_subsets.extend(list(itertools.combinations(data_columns, i)))
-
-		subsets = collections.defaultdict(list)
-		for p in all_pairs:
-			remaining_cols = [c for c in data_columns if c not in p and c != self.label_name_]
-			current_subsets = []
-			for i in range(len(remaining_cols)):
-				current_subsets.extend(itertools.combinations(remaining_cols, i))
-			for subset in current_subsets:
-				rhs_terms_1 = subset + (p[0],)
-				rhs_terms_2 = subset + (p[1],)
-
-				formula_1 = ModelDesc(
-					[Term([LookupFactor(self.label_name_)])],  # LHS
-					[Term([LookupFactor(fn, force_categorical=True)]) for fn in rhs_terms_1]
-				)
-
-				formula_2 = ModelDesc(
-					[Term([LookupFactor(self.label_name_)])],  # LHS
-					[Term([LookupFactor(fn, force_categorical=True)]) for fn in rhs_terms_2]
-				)
-
-				subsets[p].append(((formula_1, rhs_terms_1 + (self.label_name_,)),
-								   (formula_2, rhs_terms_2 + (self.label_name_,))))
-			#''
 		
-			#''
-			for subset in all_subsets:
-				if (p[1] not in subset and p[0] in subset): # One has to be absent whereas the other one has to be present (is this consistent with the paper?)
-					rhs_terms = [fn for fn in subset if fn != self.label_name_]
-
-					formula = ModelDesc(
-						[Term([LookupFactor(self.label_name_)])],  # LHS
-						[Term([LookupFactor(fn, force_categorical=True)]) for fn in rhs_terms]
-					)
-					subsets[(p[0], p[1])].append((formula, rhs_terms + [self.label_name_]))
-
-				if (p[0] not in subset and p[1] in subset):
-					rhs_terms = [fn for fn in subset if fn != self.label_name_]
-
-					formula = ModelDesc(
-						[Term([LookupFactor(self.label_name_)])],  # LHS
-						[Term([LookupFactor(fn, force_categorical=True)]) for fn in rhs_terms]
-					)
-					subsets[(p[1], p[0])].append((formula, rhs_terms + [self.label_name_]))
-			'''
-		return subsets
-
 
 
 
