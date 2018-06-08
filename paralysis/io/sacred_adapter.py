@@ -2,7 +2,7 @@ import json
 import os
 
 
-def load_data_from_file_storage(path, parameters):
+def load_data_from_file_storage(exp_name, path, parameters): # TODO: check for correct config_name/exp_name
 	results = []
 	for result_dir in os.listdir(path):
 		try:

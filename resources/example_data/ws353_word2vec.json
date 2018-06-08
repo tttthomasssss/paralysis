@@ -1,0 +1,506 @@
+[
+    {
+        "result": 0.6634354208388016,
+        "dimensionality": 1000,
+        "subsampling_rate": 1e-05,
+        "window_size": 10
+    },
+    {
+        "result": 0.6833653927796275,
+        "dimensionality": 1000,
+        "subsampling_rate": 1e-05,
+        "window_size": 1
+    },
+    {
+        "result": 0.7025677614876251,
+        "dimensionality": 1000,
+        "subsampling_rate": 1e-05,
+        "window_size": 2
+    },
+    {
+        "result": 0.6908471292089791,
+        "dimensionality": 1000,
+        "subsampling_rate": 1e-05,
+        "window_size": 5
+    },
+    {
+        "result": 0.696625532010973,
+        "dimensionality": 1000,
+        "subsampling_rate": 0.0001,
+        "window_size": 10
+    },
+    {
+        "result": 0.6607383508876431,
+        "dimensionality": 1000,
+        "subsampling_rate": 0.0001,
+        "window_size": 1
+    },
+    {
+        "result": 0.694358149008335,
+        "dimensionality": 1000,
+        "subsampling_rate": 0.0001,
+        "window_size": 2
+    },
+    {
+        "result": 0.693155844003808,
+        "dimensionality": 1000,
+        "subsampling_rate": 0.0001,
+        "window_size": 5
+    },
+    {
+        "result": 0.6679611838794417,
+        "dimensionality": 100,
+        "subsampling_rate": 1e-05,
+        "window_size": 10
+    },
+    {
+        "result": 0.6704162650538777,
+        "dimensionality": 100,
+        "subsampling_rate": 1e-05,
+        "window_size": 1
+    },
+    {
+        "result": 0.6749034244734284,
+        "dimensionality": 100,
+        "subsampling_rate": 1e-05,
+        "window_size": 2
+    },
+    {
+        "result": 0.6786219216850702,
+        "dimensionality": 100,
+        "subsampling_rate": 1e-05,
+        "window_size": 5
+    },
+    {
+        "result": 0.6822428867798255,
+        "dimensionality": 1000,
+        "subsampling_rate": 0.001,
+        "window_size": 10
+    },
+    {
+        "result": 0.6706081918908836,
+        "dimensionality": 1000,
+        "subsampling_rate": 0.001,
+        "window_size": 1
+    },
+    {
+        "result": 0.6812861171744531,
+        "dimensionality": 1000,
+        "subsampling_rate": 0.001,
+        "window_size": 2
+    },
+    {
+        "result": 0.6946642498059479,
+        "dimensionality": 1000,
+        "subsampling_rate": 0.001,
+        "window_size": 5
+    },
+    {
+        "result": 0.672859069458356,
+        "dimensionality": 100,
+        "subsampling_rate": 0.0001,
+        "window_size": 10
+    },
+    {
+        "result": 0.6513331174230252,
+        "dimensionality": 100,
+        "subsampling_rate": 0.0001,
+        "window_size": 1
+    },
+    {
+        "result": 0.680662048034935,
+        "dimensionality": 100,
+        "subsampling_rate": 0.0001,
+        "window_size": 2
+    },
+    {
+        "result": 0.6796163400516465,
+        "dimensionality": 100,
+        "subsampling_rate": 0.0001,
+        "window_size": 5
+    },
+    {
+        "result": 0.44816007709310257,
+        "dimensionality": 10,
+        "subsampling_rate": 1e-05,
+        "window_size": 10
+    },
+    {
+        "result": 0.4122872188680567,
+        "dimensionality": 10,
+        "subsampling_rate": 1e-05,
+        "window_size": 1
+    },
+    {
+        "result": 0.4399121338098334,
+        "dimensionality": 10,
+        "subsampling_rate": 1e-05,
+        "window_size": 2
+    },
+    {
+        "result": 0.4454574143911855,
+        "dimensionality": 10,
+        "subsampling_rate": 1e-05,
+        "window_size": 5
+    },
+    {
+        "result": 0.6701939191090878,
+        "dimensionality": 100,
+        "subsampling_rate": 0.001,
+        "window_size": 10
+    },
+    {
+        "result": 0.6377897940313213,
+        "dimensionality": 100,
+        "subsampling_rate": 0.001,
+        "window_size": 1
+    },
+    {
+        "result": 0.6717418833922024,
+        "dimensionality": 100,
+        "subsampling_rate": 0.001,
+        "window_size": 2
+    },
+    {
+        "result": 0.6769862467010352,
+        "dimensionality": 100,
+        "subsampling_rate": 0.001,
+        "window_size": 5
+    },
+    {
+        "result": 0.4479861561853681,
+        "dimensionality": 10,
+        "subsampling_rate": 0.0001,
+        "window_size": 10
+    },
+    {
+        "result": 0.394925137976723,
+        "dimensionality": 10,
+        "subsampling_rate": 0.0001,
+        "window_size": 1
+    },
+    {
+        "result": 0.4306704542027635,
+        "dimensionality": 10,
+        "subsampling_rate": 0.0001,
+        "window_size": 2
+    },
+    {
+        "result": 0.4266532222554837,
+        "dimensionality": 10,
+        "subsampling_rate": 0.0001,
+        "window_size": 5
+    },
+    {
+        "result": 0.4285041499394443,
+        "dimensionality": 10,
+        "subsampling_rate": 0.001,
+        "window_size": 10
+    },
+    {
+        "result": 0.33816881201080085,
+        "dimensionality": 10,
+        "subsampling_rate": 0.001,
+        "window_size": 1
+    },
+    {
+        "result": 0.3498235589573404,
+        "dimensionality": 10,
+        "subsampling_rate": 0.001,
+        "window_size": 2
+    },
+    {
+        "result": 0.44003940299172856,
+        "dimensionality": 10,
+        "subsampling_rate": 0.001,
+        "window_size": 5
+    },
+    {
+        "result": 0.6025883387144084,
+        "dimensionality": 25,
+        "subsampling_rate": 1e-05,
+        "window_size": 10
+    },
+    {
+        "result": 0.6008500844969487,
+        "dimensionality": 25,
+        "subsampling_rate": 1e-05,
+        "window_size": 1
+    },
+    {
+        "result": 0.604344053226919,
+        "dimensionality": 25,
+        "subsampling_rate": 1e-05,
+        "window_size": 2
+    },
+    {
+        "result": 0.6028711136491014,
+        "dimensionality": 25,
+        "subsampling_rate": 1e-05,
+        "window_size": 5
+    },
+    {
+        "result": 0.5982922876805329,
+        "dimensionality": 25,
+        "subsampling_rate": 0.0001,
+        "window_size": 10
+    },
+    {
+        "result": 0.5793883808910631,
+        "dimensionality": 25,
+        "subsampling_rate": 0.0001,
+        "window_size": 1
+    },
+    {
+        "result": 0.5900979529594125,
+        "dimensionality": 25,
+        "subsampling_rate": 0.0001,
+        "window_size": 2
+    },
+    {
+        "result": 0.6047736037668844,
+        "dimensionality": 25,
+        "subsampling_rate": 0.0001,
+        "window_size": 5
+    },
+    {
+        "result": 0.5913964259952752,
+        "dimensionality": 25,
+        "subsampling_rate": 0.001,
+        "window_size": 10
+    },
+    {
+        "result": 0.5409848711520637,
+        "dimensionality": 25,
+        "subsampling_rate": 0.001,
+        "window_size": 1
+    },
+    {
+        "result": 0.570817967783571,
+        "dimensionality": 25,
+        "subsampling_rate": 0.001,
+        "window_size": 2
+    },
+    {
+        "result": 0.5833322250357068,
+        "dimensionality": 25,
+        "subsampling_rate": 0.001,
+        "window_size": 5
+    },
+    {
+        "result": 0.6748577276074748,
+        "dimensionality": 300,
+        "subsampling_rate": 1e-05,
+        "window_size": 10
+    },
+    {
+        "result": 0.6916895884451896,
+        "dimensionality": 300,
+        "subsampling_rate": 1e-05,
+        "window_size": 1
+    },
+    {
+        "result": 0.6853663698741824,
+        "dimensionality": 300,
+        "subsampling_rate": 1e-05,
+        "window_size": 2
+    },
+    {
+        "result": 0.6847739475194444,
+        "dimensionality": 300,
+        "subsampling_rate": 1e-05,
+        "window_size": 5
+    },
+    {
+        "result": 0.6905426653140273,
+        "dimensionality": 300,
+        "subsampling_rate": 0.0001,
+        "window_size": 10
+    },
+    {
+        "result": 0.6607262105262405,
+        "dimensionality": 300,
+        "subsampling_rate": 0.0001,
+        "window_size": 1
+    },
+    {
+        "result": 0.6942999025553135,
+        "dimensionality": 300,
+        "subsampling_rate": 0.0001,
+        "window_size": 2
+    },
+    {
+        "result": 0.6962209442365881,
+        "dimensionality": 300,
+        "subsampling_rate": 0.0001,
+        "window_size": 5
+    },
+    {
+        "result": 0.6905190666339974,
+        "dimensionality": 300,
+        "subsampling_rate": 0.001,
+        "window_size": 10
+    },
+    {
+        "result": 0.6536217801602564,
+        "dimensionality": 300,
+        "subsampling_rate": 0.001,
+        "window_size": 1
+    },
+    {
+        "result": 0.6675733743573324,
+        "dimensionality": 300,
+        "subsampling_rate": 0.001,
+        "window_size": 2
+    },
+    {
+        "result": 0.6905969559189514,
+        "dimensionality": 300,
+        "subsampling_rate": 0.001,
+        "window_size": 5
+    },
+    {
+        "result": 0.65213492690982,
+        "dimensionality": 50,
+        "subsampling_rate": 1e-05,
+        "window_size": 10
+    },
+    {
+        "result": 0.6507709777675161,
+        "dimensionality": 50,
+        "subsampling_rate": 1e-05,
+        "window_size": 1
+    },
+    {
+        "result": 0.6524944998610266,
+        "dimensionality": 50,
+        "subsampling_rate": 1e-05,
+        "window_size": 2
+    },
+    {
+        "result": 0.6657768736868512,
+        "dimensionality": 50,
+        "subsampling_rate": 1e-05,
+        "window_size": 5
+    },
+    {
+        "result": 0.6562644230979356,
+        "dimensionality": 50,
+        "subsampling_rate": 0.0001,
+        "window_size": 10
+    },
+    {
+        "result": 0.6365225585545732,
+        "dimensionality": 50,
+        "subsampling_rate": 0.0001,
+        "window_size": 1
+    },
+    {
+        "result": 0.6489887999953189,
+        "dimensionality": 50,
+        "subsampling_rate": 0.0001,
+        "window_size": 2
+    },
+    {
+        "result": 0.6595022165614547,
+        "dimensionality": 50,
+        "subsampling_rate": 0.0001,
+        "window_size": 5
+    },
+    {
+        "result": 0.6520788629936798,
+        "dimensionality": 50,
+        "subsampling_rate": 0.001,
+        "window_size": 10
+    },
+    {
+        "result": 0.6142885097097914,
+        "dimensionality": 50,
+        "subsampling_rate": 0.001,
+        "window_size": 1
+    },
+    {
+        "result": 0.6310396166828954,
+        "dimensionality": 50,
+        "subsampling_rate": 0.001,
+        "window_size": 2
+    },
+    {
+        "result": 0.6521391555750279,
+        "dimensionality": 50,
+        "subsampling_rate": 0.001,
+        "window_size": 5
+    },
+    {
+        "result": 0.6683087528778006,
+        "dimensionality": 600,
+        "subsampling_rate": 1e-05,
+        "window_size": 10
+    },
+    {
+        "result": 0.684514362039116,
+        "dimensionality": 600,
+        "subsampling_rate": 1e-05,
+        "window_size": 1
+    },
+    {
+        "result": 0.7067477288411224,
+        "dimensionality": 600,
+        "subsampling_rate": 1e-05,
+        "window_size": 2
+    },
+    {
+        "result": 0.6881219590954729,
+        "dimensionality": 600,
+        "subsampling_rate": 1e-05,
+        "window_size": 5
+    },
+    {
+        "result": 0.6933073939085084,
+        "dimensionality": 600,
+        "subsampling_rate": 0.0001,
+        "window_size": 10
+    },
+    {
+        "result": 0.6643212579955293,
+        "dimensionality": 600,
+        "subsampling_rate": 0.0001,
+        "window_size": 1
+    },
+    {
+        "result": 0.6923088832852796,
+        "dimensionality": 600,
+        "subsampling_rate": 0.0001,
+        "window_size": 2
+    },
+    {
+        "result": 0.6961903887202489,
+        "dimensionality": 600,
+        "subsampling_rate": 0.0001,
+        "window_size": 5
+    },
+    {
+        "result": 0.6890644058025613,
+        "dimensionality": 600,
+        "subsampling_rate": 0.001,
+        "window_size": 10
+    },
+    {
+        "result": 0.663126455461532,
+        "dimensionality": 600,
+        "subsampling_rate": 0.001,
+        "window_size": 1
+    },
+    {
+        "result": 0.6787339131087958,
+        "dimensionality": 600,
+        "subsampling_rate": 0.001,
+        "window_size": 2
+    },
+    {
+        "result": 0.6934424383780434,
+        "dimensionality": 600,
+        "subsampling_rate": 0.001,
+        "window_size": 5
+    }
+]

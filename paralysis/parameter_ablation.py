@@ -6,6 +6,7 @@ from patsy import LookupFactor
 from patsy import ModelDesc
 from patsy import Term
 from statsmodels.formula import api as smf
+import pandas as pd
 
 from paralysis import util
 
@@ -16,7 +17,7 @@ class ParameterAnalyser():
 		self.data_ = util.load_data(d=data, **kwargs)
 		self.analysis_ = analysis
 		self.model_ = None
-		self.param_ordering_ = None
+		self.parameter_table_ = None
 
 		if (feature_interaction_order > 1):
 			self.data_ = util.create_higher_order_feature_interactions(
@@ -26,35 +27,15 @@ class ParameterAnalyser():
 	def fit_ols(self):
 
 		fn_analysis = getattr(self, '_fit_ols_{}'.format(self.analysis_))
-		self.param_ordering_ = fn_analysis()
+		param_ordering = fn_analysis()
 
-		return self.param_ordering_
+		tbl = []
+		for k, v in param_ordering.items():
+			tbl.append({'parameter': k, 'weight': v})
+		self.parameter_table_ = pd.DataFrame.from_dict(tbl).sort_values(by='weight', ascending=False)
 
-	'''
-	def create_plot(self):
-		out_path = os.path.join(path_utils.get_base_path(), 'phd_thesis/_resources/')
+		return self.parameter_table_
 
-		sns.set(style="whitegrid")
-		# f, (ax1, ax2) = plt.subplots(ncols=2, sharey=False, sharex=False, figsize=(17.21, 11.86), dpi=900, facecolor='w', edgecolor='k')
-		f, ax = plt.subplots(figsize=(17.21, 11.86), dpi=900, facecolor='w', edgecolor='k')
-		plt.hold(True)
-		plt.grid(True)
-
-		sns.pointplot(x="pct_explained", y="parameter", hue='dataset',
-					  data=df_1, join=False, palette="deep",
-					  markers=["<", "v", ">", "^"], scale=2.5, ci=None)
-		for tick in ax.xaxis.get_major_ticks():
-			tick.label.set_fontsize(32)
-
-		for tock in ax.yaxis.get_major_ticks():
-			tock.label.set_fontsize(32)
-		leg = plt.legend(bbox_to_anchor=(1., 0.37), fancybox=True, fontsize=32)
-		plt.xlabel('Variance explained (%)', fontsize=42)
-		plt.ylabel('Parameter', fontsize=42)
-		plt.savefig(os.path.join(out_path, 'param_ablation_wordsim_2.png'), bbox_extra_artists=(leg,),
-					bbox_inches='tight', ncol=3)
-	'''
-	
 	def _fit_ols_dominance(self):
 		model_subsets = self._build_subsets()
 
@@ -125,8 +106,8 @@ class ParameterAnalyser():
 
 if (__name__ == '__main__'):
 	#filename = '/Users/thomas/DevSandbox/InfiniteSandbox/tag-lab/paralysis/resources/example_data/snli_svm.json'
-	filename = '/Users/thomas/DevSandbox/InfiniteSandbox/tag-lab/paralysis/resources/example_data/men_word2vec.json'
+	filename = '/Users/thomas/DevSandbox/InfiniteSandbox/tag-lab/paralysis/resources/example_data/simlex_word2vec.json'
 	pa = ParameterAnalyser(data=filename, label_name='result')
 	pa.fit_ols()
-	print(pa.param_ordering_)
+	print(pa.parameter_table_)
 
