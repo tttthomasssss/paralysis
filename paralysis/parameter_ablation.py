@@ -7,7 +7,6 @@ from patsy import ModelDesc
 from patsy import Term
 from statsmodels.formula import api as smf
 
-from paralysis import misc
 from paralysis import util
 
 
@@ -31,6 +30,31 @@ class ParameterAnalyser():
 
 		return self.param_ordering_
 
+	'''
+	def create_plot(self):
+		out_path = os.path.join(path_utils.get_base_path(), 'phd_thesis/_resources/')
+
+		sns.set(style="whitegrid")
+		# f, (ax1, ax2) = plt.subplots(ncols=2, sharey=False, sharex=False, figsize=(17.21, 11.86), dpi=900, facecolor='w', edgecolor='k')
+		f, ax = plt.subplots(figsize=(17.21, 11.86), dpi=900, facecolor='w', edgecolor='k')
+		plt.hold(True)
+		plt.grid(True)
+
+		sns.pointplot(x="pct_explained", y="parameter", hue='dataset',
+					  data=df_1, join=False, palette="deep",
+					  markers=["<", "v", ">", "^"], scale=2.5, ci=None)
+		for tick in ax.xaxis.get_major_ticks():
+			tick.label.set_fontsize(32)
+
+		for tock in ax.yaxis.get_major_ticks():
+			tock.label.set_fontsize(32)
+		leg = plt.legend(bbox_to_anchor=(1., 0.37), fancybox=True, fontsize=32)
+		plt.xlabel('Variance explained (%)', fontsize=42)
+		plt.ylabel('Parameter', fontsize=42)
+		plt.savefig(os.path.join(out_path, 'param_ablation_wordsim_2.png'), bbox_extra_artists=(leg,),
+					bbox_inches='tight', ncol=3)
+	'''
+	
 	def _fit_ols_dominance(self):
 		model_subsets = self._build_subsets()
 
@@ -100,20 +124,9 @@ class ParameterAnalyser():
 
 
 if (__name__ == '__main__'):
-	filename = '/Users/thomas/DevSandbox/InfiniteSandbox/tag-lab/paralysis/resources/example_data/snli_svm.json'
+	#filename = '/Users/thomas/DevSandbox/InfiniteSandbox/tag-lab/paralysis/resources/example_data/snli_svm.json'
+	filename = '/Users/thomas/DevSandbox/InfiniteSandbox/tag-lab/paralysis/resources/example_data/men_word2vec.json'
 	pa = ParameterAnalyser(data=filename, label_name='result')
 	pa.fit_ols()
+	print(pa.param_ordering_)
 
-	tbl = misc.why_not_to_use_anova_demo(data=pa.data_, label_name=pa.label_name_)
-	print(tbl)
-	print('---------------------------------')
-	tbl = misc.why_not_to_use_anova_demo(data=pa.data_, label_name=pa.label_name_, data_columns=[
-		'composition_method', 'C', 'ngram_max', 'binarise', 'result'
-	])
-	print(tbl)
-	print('---------------------------------')
-	tbl = misc.why_not_to_use_anova_demo(data=pa.data_, label_name=pa.label_name_, data_columns=[
-		'ngram_max', 'binarise', 'result', 'C', 'composition_method'
-	])
-	print(tbl)
-	print('---------------------------------')
