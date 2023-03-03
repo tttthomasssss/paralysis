@@ -1,4 +1,3 @@
-from patsy import dmatrices
 from patsy import LookupFactor
 from patsy import ModelDesc
 from patsy import Term
@@ -21,7 +20,7 @@ def why_not_to_use_anova_demo(data, label_name, anova_scale=None, anova_type=2, 
 	:param anova_robust:
 	:return:
 	'''
-	if (data_columns is None):
+	if data_columns is None:
 		data_columns = data.columns.values.tolist()
 
 	# Create statsmodels formula with patsy --> can't use just a simple string becasue the patsy parser fails after
@@ -32,10 +31,8 @@ def why_not_to_use_anova_demo(data, label_name, anova_scale=None, anova_type=2, 
 		[Term([LookupFactor(fn, force_categorical=True)]) for fn in data_columns if fn != label_name]  # RHS
 	)
 
-	y_dm, X_dm = dmatrices(formula, data, return_type='matrix')
-
 	# Create statsmodels ols
-	model = smf.OLS(y_dm, X_dm).fit()
+	model = smf.ols(formula, data).fit()
 
 	'''
 	If the models is created via a `ModelDesc` formula instead of a string, the design matrix dataframe

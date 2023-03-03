@@ -1,11 +1,11 @@
 import collections
 import itertools
 
-from patsy import dmatrices
 from patsy import LookupFactor
 from patsy import ModelDesc
 from patsy import Term
 from statsmodels.formula import api as smf
+from tqdm import tqdm
 import pandas as pd
 
 from paralysis import util
@@ -19,7 +19,7 @@ class ParameterAnalyser():
 		self.model_ = None
 		self.parameter_table_ = None
 
-		if (feature_interaction_order > 1):
+		if feature_interaction_order > 1:
 			self.data_ = util.create_higher_order_feature_interactions(
 				df=self.data_, feature_interactions=feature_interaction_order
 			)
@@ -37,24 +37,21 @@ class ParameterAnalyser():
 		return self.parameter_table_
 
 	def _fit_ols_dominance(self):
+		# Who would have thought, but we're actually doing Shapely analysis here: https://www.displayr.com/shapley-value-regression/
 		model_subsets = self._build_subsets()
 
 		total_results = {}
-		for param in model_subsets.keys():
+		for param in tqdm(model_subsets.keys(), desc="Estimating dominance"):
 			results = collections.defaultdict(list)
-			for model_size, paired_subsets in model_subsets[param].items():
-				for ((terms_1, formula_1), (terms_2, formula_2)) in paired_subsets:
-					if (formula_1 is None):
-						y_dm, X_dm = dmatrices(formula_2, self.data_[terms_2], return_type='matrix')
-						model = smf.OLS(y_dm, X_dm).fit()
+			for model_size, paired_subsets in tqdm(model_subsets[param].items(), desc=f"\tProcessing paired subsets"):
+				for ((terms_1, formula_1), (terms_2, formula_2)) in tqdm(paired_subsets):
+					if formula_1 is None:
+						model = smf.ols(formula_2, self.data_[terms_2]).fit()
 
 						results[model_size].append(max(model.rsquared_adj, 0))
 					else:
-						y_dm_1, X_dm_1 = dmatrices(formula_1, self.data_[terms_1], return_type='matrix')
-						model_1 = smf.OLS(y_dm_1, X_dm_1).fit()
-
-						y_dm_2, X_dm_2 = dmatrices(formula_2, self.data_[terms_2], return_type='matrix')
-						model_2 = smf.OLS(y_dm_2, X_dm_2).fit()
+						model_1 = smf.ols(formula_1, self.data_[terms_1]).fit()
+						model_2 = smf.ols(formula_2, self.data_[terms_2]).fit()
 
 						results[model_size].append(max(model_2.rsquared_adj, 0) - max(model_1.rsquared_adj, 0))
 
@@ -75,7 +72,7 @@ class ParameterAnalyser():
 		data_columns = [c for c in self.data_.columns.values.tolist() if c != self.label_name_]
 
 		subsets = collections.defaultdict(lambda: collections.defaultdict(list))
-		for col in data_columns:
+		for col in tqdm(data_columns, desc="Building Subsets"):
 			remaining_cols = [c for c in data_columns if c != col]
 			current_subsets = collections.defaultdict(list)
 			for i in range(len(remaining_cols)):
@@ -85,7 +82,7 @@ class ParameterAnalyser():
 				for subset in current_subsets[k]:
 					rhs_terms_1 = list(subset)
 					formula_1 = None
-					if (len(rhs_terms_1) > 0):
+					if len(rhs_terms_1) > 0:
 						formula_1 = ModelDesc(
 							[Term([LookupFactor(self.label_name_)])],  # LHS
 							[Term([LookupFactor(fn, force_categorical=True)]) for fn in rhs_terms_1]
@@ -104,7 +101,7 @@ class ParameterAnalyser():
 		return subsets
 
 
-if (__name__ == '__main__'):
+if __name__ == '__main__':
 	#filename = '/Users/thomas/DevSandbox/InfiniteSandbox/tag-lab/paralysis/resources/example_data/snli_svm.json'
 	filename = '/Users/thomas/DevSandbox/InfiniteSandbox/tag-lab/paralysis/resources/example_data/simlex_word2vec.json'
 	pa = ParameterAnalyser(data=filename, label_name='result')
